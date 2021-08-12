@@ -1,0 +1,620 @@
+\documentclass{jetpl}
+
+\usepackage[cp1251]{inputenc}
+%\usepackage[t1]{fontenc}
+\usepackage[russian]{babel}
+\usepackage{wrapfig,epsfig,cite}
+\usepackage{graphicx}
+\usepackage{color}
+
+
+%\twocolumn
+
+\rus
+
+%%% declaration of a new mathematical operator
+\DeclareMathOperator{\sign}{sign}
+
+%%% article title
+\title{Особенности излучения, возникающего при туннельной ионизации атомов в лазерных пучках экстремальной интенсивности}
+
+%%% article title - for colontitle (at the top of the page)
+\rtitle{Особенности излучения\ldots}
+
+%%% article title - for table of contents (usualy identical with \title)
+\sodtitle{Особенности излучения, возникающего при туннельной ионизации атомов в лазерных пучках экстремальной интенсивности}
+
+%%% author(s) ( + e-mail)
+\author{С.\,В.\,Попруженко$^{+*}$\/\thanks{e-mail: sergey.popruzhenko@gmail.com}, Е.\,Б.\,Калымбетов$^{**}$}
+
+%%% author(s) - for colontitle (at the top of the page)
+\rauthor{С.\,В.\,Попруженко, Е.\,Б.\,Калымбетов}
+
+%%% author(s) - for table of contents
+\sodauthor{Попруженко, Калымбетов}
+
+%%% author's address(es)
+\address{$^+$Федеральный исследовательский центр ``Институт общей физики им. А.М. Прохорова РАН'' ул. Вавилова 38, 119991 Москва, Россия\\~\\
+$^*$Институт прикладной физики РАН, Нижний Новгород, Россия\\~\\
+$**$Национальный исследовательский ядерный университет ``МИФИ'', Каширское~ш. 31, 115409 Москва, Россия\\~\\}
+
+%\vskip 1cm
+
+
+%%% dates of submission & resubmission (if submitted once, second argument is *)
+%\dates{29 октября 2018}{*}
+
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+
+\def\jetpl{ Письма в ЖЭТФ~}
+\def\jetp{ ЖЭТФ~}
+\def\jpb{ J. Phys. B: At. Mol. Opt. Phys.~}
+\def\prl{ Phys. Rev. Lett. ~}
+\def\pra{ Phys. Rev. A ~}
+\def\etal{{\em et al.}~}
+
+\newcommand{\vecr}{{\bf r}}
+\newcommand{\vecd}{{\bf d}}
+\newcommand{\vecP}{{\bf P}}
+\newcommand{\vecq}{{\bf q}}
+\newcommand{\veck}{{\bf k}}
+\newcommand{\vecj}{{\bf j}}
+\newcommand{\vecn}{{\bf n}}
+\newcommand{\vecE}{{\bf E}}
+\newcommand{\vecR}{{\bf R}}
+\newcommand{\vecx}{{\bf x}}
+\newcommand{\vece}{{\bf e}}
+\newcommand{\vecv}{{\bf v}}
+\newcommand{\vecH}{{\bf H}}
+\newcommand{\vecp}{{\bf p}}
+\newcommand{\vecA}{{\bf A}}
+\newcommand{\vecF}{{\bf F}}
+\newcommand{\vecJ}{{\bf J}}
+\newcommand{\vecV}{{\bf V}}
+\newcommand{\vecX}{{\bf X}}
+\newcommand{\vecG}{{\bf G}}
+\newcommand{\vecw}{{\bf w}}
+\newcommand{\vecK}{{\bf K}}
+\newcommand{\vecy}{{\bf y}}
+\newcommand{\vecf}{{\bf f}}
+
+\newcommand{\lan}{{\langle}}
+\newcommand{\ra}{{\rangle}}
+
+\newcommand{\cale}{\boldmath{\mathcal{E}}}
+\newcommand{\calh}{\boldmath{\mathcal{H}}}
+\newcommand{\calb}{\boldmath{\mathcal{B}}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\del}{\mbox{\boldmath{$\nabla$}}}
+
+\newcommand{\calE}{\boldsymbol{\cale}}
+\newcommand{\calH}{\boldsymbol{\calh}}
+\newcommand{\calB}{\boldsymbol{\calB}}
+
+\def\la{\mathrel{\mathpalette\fun <}}
+\def\ga{\mathrel{\mathpalette\fun >}}
+\def\fun#1#2{\lower3.6pt\vbox{\baselineskip0pt\lineskip.9pt
+\ialign{$\mathsurround=0pt#1\hfil##\hfil$\crcr#2\crcr\sim\crcr}}}
+
+
+%%% abstract
+\abstract{Исследовано излучение быстрых электронов, возникающих при многократной туннельной ионизации тяжелых атомов в фокусе лазерного импульса сверхвысокой интенсивности $>10^{22}$Вт/см$^2$. 
+Показано, что в широком диапазоне углов качественный вид спектрально-углового распределения испущенных фотонов определяется формулами синхротронного излучения. 
+Сделаны оценки зависимости числа излучаемых фотонов и их характерной частоты от параметров лазерного импульса.
+Полученные результаты могут быть использованы для определения максимального значения интенсивности в лазерногом фокусе.\\
+\\
+We study radiation emitted by fast electrons emerging in the process of multiple tunneling ionization of heavy atoms in the focus of a laser pulse of ultrahigh intensity $>10^{22}$W/cm$^2$.
+We show that the shape of angular spectra of the emitted photons can be qualitatively described by expressions of the theory of synchrotron radiation.
+Estimates for the number of emitted photons and for their characteristic frequency are made.
+Obtained results can be of use for the determination of the peak value of laser intensity in the focus.}
+
+%%% PACS numbers
+%\PACS{71.36.+c, 67.85.Hj, 03.75.Mn, 47.32.-y}
+
+\begin{document}
+
+\maketitle
+
+\section{Add formulas}
+
+$$
+\vecE(\varphi)=-\frac{1}{lambdabar}\frac{d\vecA}{d\varphi}
+$$
+
+\section{Введение}
+В настоящее время наблюдается заметный рост интереса к исследованию фундаментальных электродинамических эффектов в полях излучения высокой интенсивности.
+Этот интерес обусловлен, в первую очередь, достигнутым в последние годы значительным прогрессом в создании источников лазерного излучения рекордно высокой мощности. 
+Интенсивность и абсолютные величины напряженности электрического и магнитного полей являются ключевыми характеристиками лазерного излучения, определяющими характер его взаимодействия с веществом в нелинейном и ультрарелятивистском режимах.
+Поэтому верхний предел интенсивности, достижимый в лазерных лабораториях, в значительной мере определяет возможности экспериментального исследования классической и квантовой динамики заряженных частиц в сильных внешних полях.
+Современное состояние этой области исследований, развивающейся на стыке нелинейной квантовой электродинамики, релятивистской оптики и физики плазмы, отражено в обзорах \cite{bulanov-rmp09,dipiazza-rmp12,fedotov-cp15}.
+
+Долгое время возможности эксперимента в физике взаимодействия лазерного излучения с атомами, электронами и плазмой были ограничены пиковыми значениями мощности в несколько сотен тераватт (ТВт) и, в исключительных случаях, до петаватта (ПВт), что позволяло достигнуть в центре лазерного фокуса интенсивности $\simeq 5\cdot 10^{21}$Вт/см$^2$.
+Сообщения о достижении интенсивности $2\cdot 10^{22}$Вт/см$^2$ \cite{yanovsky-oe08} носили единичный характер.
+В последние годы были спроектированы и построены несколько лазерных установок мульти-петаваттного уровня мощности \cite{sulf-22,apollon,APRI,SULF,CAEP,ELI,P3-ELI}.
+Их ввод в эксплуатацию ожидается в ближайшее время и должен привести к увеличению пиковых значений интенсивности в лазерном фокусе примерно на порядок, до $\simeq 10^{23}$Вт/см$^2$.
+В недавней публикации \cite{10-23} сообщается о достижении, впервые в истории лазерных исследований, интенсивности $10^{23}$Вт/см$^2$ на установке CoReLS мощностью 4ПВт.
+Дальнейшее совершенствование методов адаптивной оптики и возможная реализация проекта лазера экзаваттной мощности \cite{XCELS} позволяет рассчитывать на получение в обозримом будущем импульсов электромагнитного излучения интенсивностью $10^{24}$Вт/см$^2$ и выше.
+Ожидается, что существенное увеличение пиковых напряженностей электромагнитных полей, доступных для эксперимента, откроет возможности для исследования новых режимов взаимодействия электромагнитного излучения с веществом, включая влияние радиационного трения на классическую и квантовую динамику  заряженных частиц, генерацию квантовых каскадов элементарных частиц, возбуждение сверхсильных магнитных полей в плазме и др. \cite{bulanov-rmp09,dipiazza-rmp12,fedotov-cp15}.
+
+Нелинейная ионизация атомов и ионов интенсивным лазерным излучением является одим из наиболее глубоко исследованных эффектов физики сильных полей.
+Современное состояние теории и эксперимента в этой области физики сильных полей обсуждается в обзорах \cite{popov-rev,bauer-jpb06,poprz-rev,popov-usp15} и цитируемой в них литературе.
+При взаимодействии мощных лазерных импульсов с газовыми и конденсированными средами ионизация обычно происходит на начальном этапе, не представляющем самостоятельного интереса, и приводит к появлению плазмы, дальнейшая эволюция которой под воздействием лазерного излучения является основным предметом исследования.
+Тем не менее, понимание ионизационного процесса важно для определения зарядового состава и других характеристик плазмы.
+Кроме того, наблюдение туннельной ионизации тяжелых атомов в лазерном фокусе может быть использовано для оценки пикового значения интенсивности \cite{walker-pra01,yamakawa-pra03,link-rsi06,ciappina-pra19,ciappina-lpl20,ciappina-mre20} -- величины, знание которой важно для корректного описания наблюдаемых эффектов и разработки экспериментов.
+Возникающая в процессе ионизации плазма будет служить источником вторичного излучения, характеристики которого могут представлять интерес для диагностики как лазерного импульса, вызывающего ионизацию, так и образовавшейся плазмы.
+Наконец, при интенсивностях, превышающих $10^{24}$Вт/см$^2$, электроны, высвобождающиеся из атомов в процессе их многократной ионизации, могут вызывать развитие квантовых каскадов элементарных частиц \cite{dipiazza,kostyukov}.
+
+В данной работе мы рассмотрим излучение, создаваемое электронами, возникающими в процессе ионизации тяжелых атомов в разреженной газовой мишени, облучаемой лазерным импульсом с интенсивностью около $10^{22}$Вт/см$^2$.
+Целью является качественное описание спектрально-углового распределения такого излучения и его зависимости от интенсивности и других характеристик лазерного пучка.
+В частности будет показано, что спектрально-угловое распределение излученной энергии в области не слишком малых и не слишком больших углов относительно направления распространения лазерного импульса имеет универсальную форму, близкую к таковой для синхротронного излучения, а ширина спектра в этой промежуточной области углов оказывается пропорциональной напряженности поля в центре фокуса.
+
+
+
+\section{Постановка задачи}
+
+В поле интенсивного лазерного излучения происходит многократная ионизация атомов, приводящая к образованию ионов с высоким значением заряда $Z$.
+Механизм ионизации определяется значением параметра Келдыша \cite{keldysh,popov-rev}
+\beq
+\gamma=\frac{\sqrt{2mI_p}\omega}{eE_0}~,
+\label{gamma}
+\eeq
+где $I_p$ -- потенциал ионизации атомного уровня, $E_0$ -- амплитудное значение напряженности поля электромагнитной волны, $\omega$ -- ее частота, а $e$ и $m$ -- абсолютное значение заряда и масса электрона соответственно.
+При $\gamma\ll 1$ реализуется туннельный режим, в котором процесс ионизации протекает так же, как в постоянном поле.
+В этом случае вероятность ионизации в единицу времени описывается хорошо известными формулами \cite{popov-rev}, применимыми в том числе в релятивистском режиме.
+Для рассматриваемой здесь задачи ионизации многозарядных ионов в поле инфракрасного лазера с длиной волны $\lambda\simeq 1\mu{\rm m}$ и интенсивностью ${\cal I}=10^{22}$Вт/см$^2$ и выше параметр Келдыша составляет $\gamma=10^{-2} - 10^{-3}$ (см. оценки в \cite{ciappina-pra19,ciappina-mre20}), так что туннельное приближение работает с высокой точностью.
+% а процесс тунеллирования происходит в нерелятивистском режиме. 
+При описании излучения электрона, возникающего в поле сильной электромагнитной волны в результате ионизации, вклад собственно процесса туннелирования сводится к определению начального условия для движения электрона в волне.
+В случае туннельной ионизации электрон появляется в континууме с нулевой скоростью:
+\beq
+\vecv(t_0,\vecr_0)=0~.
+\label{v0}
+\eeq 
+Если траектория $\vecr(t;t_0,\vecr_0)$ найдена из решения уравнений движения
+\beq
+\frac{d\vecp}{dt}=e\vecE+\frac{e}{c}[\vecv\vecH]~,
+\label{em}
+\eeq
+где $\vecE$ и $\vecH$ -- напряженности электрического и магнитного полей лазерной волны, $\vecr_0$ -- радиус-вектор, задающий положение иона, а $t_0$ -- момент ионизации, спектрально-угловое распределение излучения определяется по формулам классической электродинамики \cite{dau2}:
+\beq
+\vecH^{\prime}(\Omega,\vecn)=\frac{ie\Omega}{c^2R_0}e^{iKR_0}\int\limits_{t_0}^{\infty}e^{i(\Omega t-\vecK\vecr)}[\vecn\vecv]dt~,
+\label{H}
+\eeq
+\beq
+dW(\Omega,\vecn)=\frac{cR_0^2}{4\pi^2}\vert\vecH(\Omega,\vecn)\vert^2dod\Omega~.
+\label{dW}
+\eeq
+Здесь $W$ -- излученная энергия, $do$ -- элемент телесного угла, $\vecn$ -- единичный вектор в направлении излучения, $\vecH^{\prime}$ -- вектор магнитного поля излучения (не путать с вектором $\vecH$ магнитного поля лазерной волны), $\Omega$ и $\vecK=\Omega\vecn/c$ -- его частота и волновой вектор, $R_0$ -- расстояние до точки наблюдения и $\vecv(t)=\dot\vecr(t)$ -- скорость электрона.
+
+Для описания электромагнитного поля лазерной волны мы будем пользоваться приближением линейно поляризованного гауссова пучка наинизшей моды ${\rm TEM}_{00}$
+\beq
+\vecE(\vecr,t)=\frac{\vecE_0}{\sqrt{1+z^2/z_R^2}}\exp\bigg\{-\frac{x^2+y^2}{w_0^2(1+z^2/z_R^2)}-i\bigg(kz-\omega t+k\frac{x^2+y^2}{2R(z)}-\psi(z)\bigg)\bigg\}~~~,~~~\vecH(\vecr,t)=[\vecn_0\vecE].
+\label{gauss}
+\eeq
+Здесь $w_0$ -- радиус перетяжки в фокусе, $z_R=\pi w_0^2/\lambda$ -- релеевская длина, $R(z)=z(1+z_R^2/z^2)$ -- кривизна и $\psi(z)={\rm arctan}(z/z_R)$ -- фаза Гуи.
+Направление распространения пучка (вдоль оси $z$) задается вектором $\vecn_0$ и $\veck=2\pi\vecn_0/\lambda$ -- волновой вектор.
+Для численных расчетов используются значения $\lambda=1$мкм, $w_0=2$мкм и $z_R\approx 12.6\mu{\rm m}$, при этом FWHM поперечный размер фокуса $d_0=\sqrt{2\ln 2}\:w_0\approx 2.4\;\mu{\rm m}$, а угловая расходимость пучка 
+\beq
+\Theta={\rm arctan}\bigg(\frac{\lambda}{\pi w_0}\bigg)\approx 0.16~.
+\label{Theta}
+\eeq
+Эти параметры близки к заявленным в \cite{sulf-22} для 10-ПВт лазерной установки SULF. 
+Напряженность электромагнитного поля в центре фокуса характеризуется безразмерным параметром 
+\beq
+a_0=\frac{eE_0}{mc\omega}~.
+\label{a0}
+\eeq
+Мы также будем использовать обозначение $a(\vecr)$ для зависящего от точки значения параметра (\ref{a0}).
+При рассматриваемых характеристиках лазерного пучка для достижения пикового значения $a_0=10^2$ в центре фокуса, соответствующего интенсивности ${\cal I}\approx 2\cdot 10^{22}$Вт/см$^2$, необходима мощность около 1.5ПВт, что отвечает энергии $\approx 50$Дж при длительности импульса $\tau=30$фс.
+
+
+\section{Основные уравнения}
+
+\subsection{Траектории}
+Для расчета спектрально-углового распределения излученной энергии нужно найти траекторию электрона, решая уравнение (\ref{em}).
+Для гауссова пучка (\ref{gauss}) траектория может быть найдена только численно.
+Прежде, чем перейти к результатам численных расчетов, сделаем оценки, позволяющие качественно понять характер движения электрона, используя приближение однородного скрещенного поля, то есть, считая, что 
+\beq
+\vecE=\vecE(\vecr_0,\varphi_0)~,~~~\vecH=\vecH(\vecr_0,\varphi_0)~,
+\label{cross}
+\eeq
+где $\varphi_0=\omega t_0-\veck\vecr_0$ -- фаза поля лазерной волны в момент ионизации электрона в точке расположения ионизуемого атома.
+Применимость приближения скрещенного поля можно обосновать следующим образом.
+При движении с нулевой начальной скоростью в электромагнитном поле высокой интенсивности траектория электрона окажется сильно вытянутой вдоль направления распространения импульса, а движение электрона быстро станет ульрарелятивистским.
+При таком попутном движении фаза поля $\varphi=\omega t-\veck\vecr$ вдоль траектории изменяется гораздо медленнее, чем безразмерное время $\omega t$, так что электрон покидает область сильного поля за собственное время, малое по сравнению с периодом колебаний лазерной волны (см. оценки ниже).
+%Это и позволяет использовать приближение (\ref{cross}).
+Будем считать, что электрическое поле поляризовано вдоль оси $x$.
+Тогда траектория лежит в плоскости $(x,z)$ и имеет вид
+\beq
+\tilde{x}=\frac{a}{2}\varphi^2~,~~~\tilde{z}=\frac{a^2}{6}\varphi^3~,~~~p_x=mca\varphi~,~~~p_z=\frac{mc}{2}a^2\varphi^2~,~~~
+{\cale}_{\rm kin}=mc^2\bigg(1+\frac{a^2\varphi^2}{2}\bigg)~,
+\label{xz}
+\eeq
+где использованы безразмерные переменные 
+\beq
+\tilde{x}=\frac{2\pi x}{\lambda}~,~~~\tilde{z}=\frac{2\pi z}{\lambda}~,~~~\varphi=\frac{2\pi s}{\lambda}~,~~~s=c\int\limits_{t_0}^tdt\sqrt{1-v^2/c^2}~.
+\label{tilde}
+\eeq
+Эти формулы позволяют оценить время пребывания электрона в лазерном фокусе.
+Конечное значение этого времени определяется выходом электрона из области сильного поля либо через боковую поверхность фокуса, либо через задний фронт импульса, за счет отставания по фазе, либо за счет попадания, вместе с лазерным импульсом, в область, где гауссов пучок уже расфокусирован.
+Для оценки рассмотрим траекторию, начинающуюся в центре фокуса в момент максимума поля, $\vecr_0=0,\varphi_0=0$.
+Будем считать, что электрон выходит через боковую поверхность, если его координата $x=bw_0$, где $b$ -- числовой коэффициент порядка единицы.
+Тогда фаза поля, отвечающая моменту выхода равна
+\beq
+\delta\varphi_x=2\sqrt{\frac{b}{\Theta a_0}}~.
+\label{delta-x}
+\eeq
+Фаза, при которой электрон попадает в область слабого поля (такого же, как в предыдущей оценке), двигаясь вдоль оси $z$, равна
+\beq
+\delta\varphi_z=\bigg(\frac{12e^{b^2}}{\Theta^2 a_0^2}\bigg)^{1/3}~.
+\label{delta-z}
+\eeq
+Наконец, фаза, при которой электрон выйдет из области высокой интенсивности через задний фронт лазерного импульса длительностью $\tau$, определяется из условия $ct(\delta\varphi_{\tau})-z(\delta\varphi_{\tau})\simeq c\tau$ и равна
+\beq
+\delta\varphi_{\tau}=\omega\tau
+\label{delta-tau}
+\eeq
+Очевидно, при $a_0\gg 1$ $\delta\varphi_{\tau}\gg\delta\varphi_x,~\delta\varphi_z$, что и обосновывает приближение стационарного пучка.
+Оценим соотношение между фазами (\ref{delta-x}) и (\ref{delta-z}).
+Для $b=2$
+\beq
+\frac{\delta\varphi_x}{\delta\varphi_z}\approx 0.33(\Theta a_0)^{1/6}~.
+\label{ratio}
+\eeq
+Эта оценка показывает, что в широком диапазоне параметров фазы (\ref{delta-x}) и (\ref{delta-z}) оказываются близкими по величине, так что любую из них можно использовать для оценки эффективного времени пребывания в фокусе.
+Только в очень сильном поле и при жесткой фокусировке выход из области высокой интенсивности происходит преимущественно за счет движения вдоль оси $z$.
+%Так, для $\Theta=0.3$ $a_0=10^3$, что соответствует $w_0\approx\lambda$ и интенсивности $2\cdot 10^{24}$Вт/см$^2$, получим для отношения (\ref{ratio}) $\approx 1.5$; при меньшей интенсивности и более слабой фокусировке это отношение еще меньше.
+Характерные значения фаз (\ref{delta-x}) и (\ref{delta-z}) составляют, для $a_0=10^2$, $\delta\varphi_x\approx 0.5$ и $\delta\varphi_z\approx 0.9$.
+Эти величины оказываются малыми по сравнению с $2\pi$, но не с единицией.
+Таким образом, приближение скрещенного поля может быть использовано только для качественных оценок.
+
+На Рис.1 показаны траектории электронов, вычисленные в приближении скрещенного поля и путем точного численного решения уравнения (\ref{em}) в поле (\ref{gauss}) для нескольких значений $\vecr_0$ внутри фокуса.
+Во всех случаях считалось, что электрон появляется в континууме в момент $\varphi_0=0$, когда электрическое поле максимально по величине и направлено против оси $x$. 
+Видно, что приближение скрещенного поля работает в целом хорошо, а на начальном участке траектории, который лежит в области наибольшей интенсивности и поэтому вносит основной вклад в излучение, точная и приближенная траектории практически совпадают.
+\begin{figure}[t]
+\includegraphics[width=0.9\columnwidth]{Fig1.pdf}
+%\includegraphics[width=0.9\columnwidth]{Fig1c.png}
+\caption{Рис. 1. (а): Траектории электрона в плоскости $(x,z)$, найденные численно из уравнения (\ref{em}) (сплошные линии) и по формулам (\ref{xz}) (пунктирные линии) для различных точек начала движения $x_0=y_0=z_0=0$ (черные линии), $x_0=\pm 1$мкм, $y_0=z_0=0$ (красные линии) и $y_0=2$мкм, $y_0=z_0=0$ (синии линии). Здесь же показаны изолинии постоянной интенсивности гауссова пучка (\ref{gauss}). (b): зависимость угла наклона траекторий $\chi$ (\ref{chi}) от фазы $\varphi$ для тех же траекторий. Горизонтальная линия указывает величину угла $\Theta$. }
+\label{fig1}
+\end{figure}
+При описании излучения важную роль играет направление скорости электрона, образующее с осью $z$ угол
+\beq
+\chi={\rm arctan}~\frac{p_x}{p_z}={\rm arctan}~\frac{2}{a\varphi}~.
+\label{chi}
+\eeq 
+Значение фазы, при достижении которого направление скорости попадает внутрь конуса лазерного пучка 
+\beq
+\delta\varphi_{\Theta}=\frac{2}{a_0\Theta}
+\label{delta-theta}
+\eeq
+оказывается достаточно малым: при рассматриваемых параметрах для траектории, начинающейся в центре фокуса (см. Рис.1(b)), $\delta\varphi_{\Theta}\approx 0.1\ll\delta\varphi_{x,z}$.
+
+
+\subsection{Излучение}
+
+Исследуем теперь характеристики излучения, возникающего при движении по траекториям, рассмотренным в предыдущем разделе.
+Приближение скрещенного поля позволяет сделать качественные оценки спектрально-углового распределения излученных фотонов без вычисления  интеграла (\ref{H}) вдоль траектории $\vecr(t)$.
+Такой расчет будет представлен в последующей более подробной работе.
+Для траектории (\ref{xz}) в скрещенном поле замкнутые аналитические формулы для спектрально-углового распределения излучения могут быть получены в ряде специальных случаев \cite{ritus,baier}, например, для асимптотически свободных траекторий, проходящих через область поля.
+Эти результаты не могут быть использованы в рассматриваемом нами случае из-за начального условия, согласно которому траектория начинается внутри лазерного фокуса, а не снаружи от него.
+
+Согласно (\ref{xz}) движение электрона становится релятивистским при 
+\beq
+\varphi-\varphi_0\equiv\delta\varphi_*=\frac{1}{a_0}\ll\delta\varphi_{\Theta}\ll\delta\varphi_{x,z}~,
+\label{varphi-rel}
+\eeq
+то есть, задолго до выхода электрона из фокуса.
+Таким образом, на большей части траектории, пролегающей в области сильного поля, движение электрона является ультрарелятивистским.
+Поскольку при этом продольный импульс растет быстрее поперечного (\ref{xz}), движение быстро становится сопутствующим, что как известно, приводит к сильному подавлению квантовых эффектов, так что излучение остается классическим даже при очень больших значениях $a_0$.
+Таким образом, для описания излучения можно использовать формулы классической электродинамики, упрощенные в ультрарелятивистском пределе.
+Дальнейшее упрощение возникает, если учесть, что на большей часте траектории угол ее поворота значительно превышает эффективную ширину конуса излучения \cite{dau2}
+\beq
+\delta\theta\simeq\frac{1}{\gamma}\approx\frac{1}{1+a_0^2\varphi^2/2}~,
+\label{dtheta}
+\eeq
+и становится малой при $\delta\varphi_{\Theta}>\varphi\gg 1/a_0$.
+В диапазоне углов $\chi_0>\theta\gg\delta\theta$ (см. Рис.1(б)) излучение можно описывать в синхротронном приближении \cite{dau2}, считая, что в каждый момент времени $t$ излучение направлено вдоль вектора $\vecv(t)$, т.е. $\theta\approx\chi$.
+Здесь $\chi_0$ -- угол, соответствующий фазе, при которой движение становится ультрарелятивистским.
+Если в качестве границы ультрарелятивистской области выбрать $\gamma=10$, то для $a_0=10^2$ получим $\chi_0=0.44=25^o$.
+%Из оценки (\ref{dtheta}) видно, что $\delta\theta\gg\Theta$
+Полная мощность излучения 
+%\beq
+%I(\varphi)=\frac{2e^2\omega^2a_0^2}{3c}
+%\label{I}
+%\eeq
+%-\frac{2e^2\omega^2}{3m^2c^3}\frac{dp^{\mu}}{d\varphi}\frac{dp_{\mu}}{d\varphi}=
+в приближении скрещенного поля остается постоянной, что противоречит физической постановке задачи, так как электрон довольно быстро выходит из области сильного поля.
+Как видно из формы траекторий, показанных на Рис.1, выход из фокуса происходит при $\varphi\approx 0.2~-~0.4$.
+В таких условиях неплохим приближением для расчета мощности будет ее вычисление вдоль траектории, найденной в приближении скрещенного поля, по формуле
+\beq
+P=\frac{2e^4}{3m^2c^3}\frac{(\vecE+[\vecv\vecH]/c)^2-(\vecv\vecE)^2/c^2}{1-v^2/c^2}~,
+\label{I-exact}
+\eeq 
+в которую подставляются точные значения полей $\vecE$ и $\vecH$.
+На Рис.2 показаны функции $P(\varphi)$, рассчитанные по формуле (\ref{I-exact}) с траекториями, найденными в приближении скрещенного поля и численно из уравнения (\ref{em}) для поля (\ref{gauss}).
+
+\begin{figure}[t]
+%\includegraphics[width=0.9\columnwidth]{Fig1.pdf}
+%\includegraphics[width=0.9\columnwidth]{Fig1c.png}
+\caption{Рис. 2.: Зависимость мощности излучения от фазы $P\varphi)$, рассчитанная по формуле (\ref{I-exact}) вдоль траекторий, найденных численно из уравнения (\ref{em}) (сплошные линии) и в приближении скрещенного поля (\ref{xz}) (пунктирные линии) для поля гауссова пучка (\ref{gauss}).
+Мощность нормирована на величину $P(\varphi=0)$ в точке $\vecr=0$, в которой поле гауссова пучка максимально.}
+\label{fig2}
+\end{figure} 
+
+Качественный вид углового распределения легко получить, учитывая, что при ультрарелятивистском движении в области углов $\theta\gg\delta\theta$ ускорение {\bf w} практически ортогонально скорости, и можно воспользоваться формулой \cite{dau2}
+\beq
+dP=\frac{e^2w^2}{4\pi c^3}\frac{do}{\bigg(1-\frac{v\cos(\theta-\chi)}{c}\bigg)^4}~.
+\label{ang-1}
+\eeq
+Для вычисления энергии $dW$, излученной в телесный угол $do$, необходимо проинтегрировать (\ref{ang-1}) по времени.
+Опуская детали вычислений, приведем результат для случая скрещенного поля:
+\beq
+\frac{dW}{do}=\frac{3a_0e^2\omega}{c}\bigg(1+\frac{a_0^2\varphi^2_*}{2}\bigg)\bigg(1+\frac{a_0^2\varphi^2_*}{4}\bigg)\bigg(1+\frac{a_0^4\varphi^4_*}{4}\bigg)~,
+\label{ang-2}
+\eeq
+где фаза $\varphi_*=2/(a_0{\rm tg}\theta)$.
+Угловые распределения, вычисленные из (\ref{ang-2}) и, с использованием точных траекторий, найденных численно, из (\ref{ang-1}),  показаны на Рис.3(а).
+
+Качественно описать спектр испущенных фотонов также можно без точного вычисления интеграла (\ref{H}), заметив, что в широком интервале углов $\theta\gg\delta\theta$ излучение в заданном направлении формируется на малом участке траектории, который можно считать окружностью с мгновенными значениями радиуса кривизны $\rho(\varphi)$ и угловой скорости 
+\beq
+\omega_{\rm eff}(\varphi)\approx\frac{c}{\rho(\varphi)}~.
+\label{om-eff}
+\eeq
+В таком приближении излучение электрона эквивалентно синхротронному в магнитном поле 
+\beq
+H_{\rm eff}=\frac{mc\omega_{\rm eff}\gamma}{e}~,
+\label{H-eff}
+\eeq
+и спектр в заданном направлении может быть найден непосредственно при помощи известных формул (см., например, параграф 73 в \cite{dau2}), в которые в качестве напряженности магнитного поля подставляется величина (\ref{H-eff}), а номер гармоники $n=\Omega/\omega_{\rm eff}$ рассматривается как непрерывный параметр.
+
+\begin{figure}[t]
+%\includegraphics[width=0.9\columnwidth]{Fig1.pdf}
+%\includegraphics[width=0.9\columnwidth]{Fig1c.png}
+\caption{Рис. 3.: (a) Угловое распределение излученной энергии, вычисленное для случая, когда электрон начинает движение в центре фокуса. Сплошной линией показан результат расчета с использованием траектории, найденной численным решением уравнения (\ref{em}), пунктирной линией -- результат использования приближения скрещенного поля (\ref{ang-2}). Кривые нормированы на единичное значение в момент начала движения $(\varphi=0)$.
+(b) Зависимость характерной частоты (\ref{Om*}) от направления излучения, вычисленная с использованием численно найденных траекторий (сплошная линия) и в приближении скрещенного поля по формуле (\ref{Om-max}).}
+\label{fig3}
+\end{figure} 
+
+Оценим характерную частоту $\Omega_*$ в спектре излучения в зависимости от угла $\theta$, используя известное соотношение \cite{dau2}
+\beq
+\Omega_*= \frac{eH}{mc}\gamma^2~.
+\label{Om*}
+\eeq
+В приближении скрещенного поля получим:
+\beq
+\Omega_*= \omega a_0\sqrt{1+\frac{a_0^4\varphi^4}{4}}~.
+\label{Om-max}
+\eeq
+В области углов $\theta\approx\Theta$ эта оценка дает $\Omega_*\approx 2\omega a_0/\Theta^2$.
+На Рис.3(b) показано отношение $\Omega_*/\omega$, вычисленное по формуле (\ref{Om-max}) и из точного численного решения уравнений движения.
+
+\section{Заключение}
+
+Полученные в данной работе результаты позволяют качественно описать основные особенности спектрально-угловых распределений излучения, испускаемого электронами при туннельной ионизации атомов лазерными импульсами сверхвысокой интенсивности.
+Основное отличие полученных формул для траекторий и спектров от известных ранее для случаев скрещенного поля \cite{ritus,baier} и плоской электромагнитной волны \cite{sarachik} связано с начальным условием для движения электрона (\ref{v0}), появляющегося в области сильного поля с нулевой начальной скоростью.
+Роль фокусировки поля также значительна, так как благодаря время взаимодействия, определяемая формулами (\ref{delta-x}) и (\ref{delta-z}), оказывается конечным.
+Из сравнения траекторий и величин, характеризующих излучение, полученных численным решением уравнений движения и в приближении скрещенного поля видно, что последнее работает достаточно хорошо и может обеспечить неплохую количественную точность расчетов.
+Это обстоятельство существенно упростит расчет излучения в реалистической экспериментальной ситуации, для описания которой необходимо вычисление большого числа траекторий, отвечающих различным начальным точкам движения $(\vecr_0,\varphi_0)$ и значениям полей в них.
+
+В рассмотренном нами случае мощность излучения оказывается относительно слабой, $P\sim a_0^2$, в отличие от движения в поле сильной электромагнитной волны с нулевой средней скоростью, когда $P\sim a_0^4$ \cite{dau2,sarachik}.
+В результате полная энергия, излучаемая электроном за время выхода из фокуса
+\beq
+W\simeq P(0)\delta t=P(0)\frac{dt}{d\varphi}\delta\varphi_{x,z}~,~~~P(0)=\frac{2e^2\omega^2a_0^2}{3c}~
+\label{W0}
+\eeq
+также невелика и составляет для выбранных нами параметров $W\simeq 10^3-10^4$эВ.
+Учитывая, что характерная энергия излучаемого фотона, оцениваемая из (\ref{Om-max}) и Рис.4(в), составляет $10^2-10^3$эВ, приходим к выводу, что среднее число фотонов, испущенных одним электроном, невелико, поэтому экспериментальное наблюдение излучения может представлять значительные трудности. 
+Требования к экспериментальной диагностике, необходимой для регистрации излучения в таких условиях, будут детально рассмотрены в более подробной последующей публикации.
+
+\vskip 1cm
+Авторы признательны И.Ю. Костюкову, А.А. Миронову и А.М. Федотову за полезные обсуждения.
+Работа выполнена при финансовой поддержке Российского научного фонда (проект No. 20-12-00077).
+
+\vskip 1cm
+
+%\newpage 10,15-19,23,24
+
+\begin{thebibliography}{99}
+
+\bibitem{bulanov-rmp09} G. Mourou, T. Tajima and S.V. Bulanov, Rev. Mod. Phys. {\bf 78}, 309 (2009).
+
+\bibitem{dipiazza-rmp12} A. Di Piazza, C. M\"{u}ller, C.Z. Hatsagortsyan and C.H. Keitel, Rev. Mod. Phys. {\bf 84}, 1177 (2012).
+
+\bibitem{fedotov-cp15} N.B. Narozhny and A.M. Fedotov, Cont. Phys. {\bf 56}, 249 (2015).
+
+\bibitem{yanovsky-oe08} V. Yanovsky \etal, Opt. Express {\bf 16}, 2109 (2008).
+
+\bibitem{sulf-22} Z. Guo \etal, Opt. Exp. {\bf 26}, 26776 (2018).
+
+\bibitem{apollon} D. Papadopoulos \etal, High Pow. Las. Sci. Eng. {\bf 4} E34 (2016).
+
+\bibitem{APRI} J.H. Sung \etal, Opt. Lett. {\bf 42}, 2058 (2017).
+
+\bibitem{CAEP} X. Zeng \etal, Opt. Lett. {\bf 42}, 2014 (2017).
+
+\bibitem{SULF} Z. Gan \etal, Opt. Exp., {\bf 25} 5169 (2017); W. Li \etal, Opt. Lett. {\bf 43}, 5681 (2018).
+
+\bibitem{ELI} J-P. Chambaret \etal, in ``Solid State Lasers and Amplifiers IV, and High-Power Lasers'' {\bf 7721} 77211D (2010).
+%Chekhlov O, Cheriaux G 
+
+\bibitem{P3-ELI} S. Weber \etal, Mat. Radiat. Extr. {\bf 2}, 149 (2017).
+
+\bibitem{10-23} J. W. Yoon, \etal, Optica {\bf 8} 630 (2021). 
+
+\bibitem{XCELS} A.V. Bashinov, A.A. Gonoskov, A.V. Kim, G. Mourou and A.M. Sergeev, Eur. Phys. J.  Spec. Top. {\bf 223}, 1105 (2014).
+
+\bibitem{popov-rev} В. С. Попов, УФН {\bf 174}, 921 (2004).
+
+\bibitem{bauer-jpb06} D.B. Milosevic, G.G. Paulus, D. Bauer and W. Becker, J. Phys. B: At. Mol. Opt. Phys. {\bf 39}, R203 (2006).
+
+\bibitem{poprz-rev} S. V. Popruzhenko, \jpb {\bf 47}, 204001 (2014).
+
+\bibitem{popov-usp15} Б.М. Карнаков, В.Д. Мур, С.В. Попруженко, В.С. Попов, УФН {\bf 185}, 3 (2015).
+
+\bibitem{walker-pra01} C.A. Chowdhury, C.P.J. Barty and B.C. Walker, \pra {\bf 63}, 042712 (2001).
+
+\bibitem{yamakawa-pra03} K. Yamakawa, Y. Akahane, Y. Fukuda, M. Aoyama, N. Inoue and H. Ueda, \pra {\bf 68}, 065403 (2003).
+
+\bibitem{link-rsi06} A. Link \etal, Rev. Sci. Inst. {\bf 77}, 10E723 (2006).
+
+\bibitem{ciappina-pra19} M. F. Ciappina, S. V. Popruzhenko, S. V. Bulanov, T. Ditmire, G. Korn, and S. Weber, \pra {\bf 99}, 043405 (2019).
+
+\bibitem{ciappina-lpl20} M.F. Ciappina and S.V. Popruzhenko, Las. Phys. Lett. {\bf 17}, 025301 (2020).
+
+\bibitem{ciappina-mre20} M.F. Ciappina, E.E. Peganov and S.V. Popruzhenko, Matter Radiat. Extremes {\bf 5}, 044401 (2020).
+
+\bibitem{dipiazza} M. Tamburini , A. Di Piazza and C. H. Keitel, Sci. Rep. {\bf 7}, 5694 (2017).
+
+\bibitem{kostyukov} I. I. Artemenko and I. Yu. Kostyukov, \pra {\bf 96}, 032106 (2017).
+
+\bibitem{keldysh} L.V. Keldysh,  \jetp \textbf{47} , 1945 (1964) [Sov. Phys. JETP \textbf{20} , 1307 (Engl. transl.) (1965)].
+
+\bibitem{dau2} Л.Д. Ландау, Е.М. Лифшиц, Теоретическая физика. Теория поля. Наука, 1988.
+
+\bibitem{ritus} V. I. Ritus, J. Sov. Laser Res. {\bf 6}, 497 (1985).
+
+\bibitem{baier} В.Н. Баер, В.М. Катков, В.М. Страховенко, ЖЭТФ {\bf 100}, 1713 (1991) [J. Exp. Theor. Phys. {\bf 73}, 945
+(1991)].
+
+\bibitem{sarachik} E.S. Sarachik and G. T. Schappert, Phys. Rev. D {\bf 1}, 2738 (1970).
+
+
+
+\end{thebibliography}
+\end{document}
+
+ENGLISH TITLE AND ABSTRACT
+
+%%% article title
+\title{Characteristics of radiation emitted in tunneling ionization of atoms in laser beams of extreme intensity}
+
+%%% article title - for colontitle (at the top of the page)
+%\rtitle{Излучение ультрарелятивистских электронов\ldots}
+
+%%% article title - for table of contents (usualy identical with \title)
+%\sodtitle{Излучение ультрарелятивистских электронов, образующихся при ионизации атомов в лазерных пучках экстремальной интенсивности}
+
+%%% author(s) ( + e-mail)
+\author{S.\,V.\,Popruzhenko$^{+*}$\/\thanks{e-mail: sergey.popruzhenko@gmail.com}, E.\,B.\,Kalymbetov$^{**}$}
+
+%%% author(s) - for colontitle (at the top of the page)
+%\rauthor{С.\,В.\,Попруженко, Е.\,Б.\,Калымбетов}
+
+%%% author(s) - for table of contents
+%\sodauthor{Попруженко, Калымбетов}
+
+%%% author's address(es)
+\address{$^+$Prokhorov General Physics Institute of the Russian Academy of Sciences, Vavilova 38, 119991 Moscow, Russia\\~\\
+$^*$Applied Physics Institute of the Russian Academy of Sciences, 603950 Nizhny Novgorod, Russia\\~\\
+$**$National Research Nuclear University MEPhI, Kashirskoe shosse 31, 115409 Moscow, Russia\\~\\}
+
+
+
+
+
+\bibitem{yanovsky-oe08} V. Yanovsky \etal, ``Ultra-high intensity 300-TW laser at 0.1 Hz repetition rate,'' Opt. Express {\bf 16}, 2109 (2008).
+
+\bibitem{bulanov-rmp09} G. Mourou, T. Tajima and S.V. Bulanov, ``Optics in the relativistic regime,'' \rmp {\bf 78}, 309 (2009).
+
+\bibitem{dipiazza-rmp12} A. Di Piazza, C. M\"{u}ller, C.Z. Hatsagortsyan and C.H. Keitel, ``Extremely high-intensity laser interactions with fundamental quantum systems,'' \rmp {\bf 84}, 1177 (2012).
+
+\bibitem{fedotov-cp15} N.B. Narozhny and A.M. Fedotov, ``Extreme light physics,'' Cont. Phys. {\bf 56}, 249 (2015).
+
+%\bibitem{perry-ol99} M. D. Perry \etal, ``Petawatt laser pulses,'' Opt. Lett. {\bf 24}, 160 (1999).
+%D. Pennington, B. C. Stuart, G. Tietbohl, J. A. Britten, C. Brown, S. Herman, B. Golick, M. Kartz, J. Miller, H. T. Powell, M. Vergino, and V. Yanovsky,
+
+%\bibitem{bahk-ol04} S.-W. Bahk, P. Rousseau, T. A. Planchon, V. Chvykov, G. Kalintchenko, A. Maksimchuk, G. Mourou, and V. Yanovsky, ``Generation and characterization of the highest laser intensities $(10^{22}{\rm W/cm}^2)$,'' Opt. Lett. {\bf 29}, 2837 (2004).
+
+\bibitem{sulf-22} Z. Guo \etal, ``Improvement of the focusing ability by double deformable mirrors for 10-PW-level Ti:sapphire chirped pulse amplification laser system,'' Opt. Exp. {\bf 26}, 26776 (2018).
+
+\bibitem{apollon} D. Papadopoulos \etal, ``The Apollon 10 PW laser: experimental and theoretical investigation of the temporal characteristics,'' High Pow. Las. Sci. Eng. {\bf 4} E34 (2016),  doi:10.1017/hpl.2016.34; ``First Commissioning Results of the Apollon Laser on the 1 PW Beam Line,'' 2019 Conference on Lasers and Electro-Optics (CLEO), doi:10.1364/CLEO\_SI.2019.STu3E.4.
+
+\bibitem{APRI} J.H. Sung \etal, ``4.2PW, 20 fs Ti:sapphire laser at 0.1 Hz,'' Opt. Lett. {\bf 42}, 2058 (2017).
+%Lee H W, Yoo J Y 
+
+\bibitem{CAEP} X. Zeng \etal, ``Multi-petawatt laser facility fully based on optical parametric chirped-pulse amplification,'' Opt. Lett. {\bf 42}, 2014 (2017).
+
+\bibitem{SULF} Z. Gan \etal, ``200 J high efficiency Ti:sapphire chirped pulse amplifier pumped by temporal dual-pulse,'' Opt. Exp., {\bf 25} 5169 (2017); W. Li \etal, ``339 J high-energy Ti:sapphire chirped-pulse amplifier for 10 PW laser facility,'' Opt. Lett. {\bf 43}, 5681 (2018).
+
+\bibitem{ELI} J-P. Chambaret \etal, 2010 ``Extreme light infrastructure: laser architecture and major challenges,'' in ``Solid State Lasers and Amplifiers IV, and High-Power Lasers'' {\bf 7721} 77211D
+%Chekhlov O, Cheriaux G 
+
+\bibitem{P3-ELI} S. Weber \etal, ``P3: An installation for high-energy density plasma physics and ultra-high intensity laser–matter interaction at ELI-Beamlines,'' Mat. Radiat. Extr. {\bf 2}, 149 (2017).
+
+\bibitem{XCELS} A.V. Bashinov, A.A. Gonoskov, A.V. Kim, G. Mourou and A.M. Sergeev, ``New horizons for extreme light physics with mega-science project XCELS,'' Eur. Phys. J.  Spec. Top. {\bf 223}, 1105 (2014).
+
+\bibitem{10-23} J. W. Yoon, Y. G. Kim, I. W. Choi \etal, Optica {\bf 8} 630 (2021). 
+
+
+\bibitem{popov-rev} В. С. Попов, УФН {\bf 174}, 921 (2004).
+
+\bibitem{bauer-jpb06} D.B. Milosevic, G.G. Paulus, D. Bauer and W. Becker, J. Phys. B: At. Mol. Opt. Phys. {\bf 39}, R203 (2006).
+
+\bibitem{poprz-rev} S. V. Popruzhenko, \jpb {\bf 47}, 204001 (2014).
+
+\bibitem{popov-usp15} Б.М. Карнаков, В.Д. Мур, С.В. Попруженко, В.С. Попов, УФН {\bf 185}, 3 (2015).
+
+\bibitem{walker-pra01} C.A. Chowdhury, C.P.J. Barty and B.C. Walker, ``Nonrelativistic'' ionization of the L-shell states in argon by a ``relativistic'' $10^{19}{\rm W/cm}^2$
+laser field,'' \pra {\bf 63}, 042712 (2001).
+
+%\bibitem{walker-josa03} E.A. Chowdhury and B.C. Walker, ``Multielectron ionization processes in ultrastrong laser fields,'' J. Opt. Soc. Am. B {\bf 20}, 109 (2003).
+
+\bibitem{yamakawa-pra03} K. Yamakawa, Y. Akahane, Y. Fukuda, M. Aoyama, N. Inoue and H. Ueda, ``Ionization of many-electron atoms by ultrafast laser pulses with peak intensities greater than $10^{19}{\rm W/cm}^2$,'' \pra {\bf 68}, 065403 (2003).
+
+%\bibitem{yamakawa-jmo03} K. Yamakawa, Y. Akahane, Y. Fukuda, M. Aoyama, J. Ma, N. Inoue, H. Ueda and H. Kiriyama, ``Super strong field ionization of atoms by $10^{19}{\rm W/cm}^2$, 10 Hz laser pulses,'' \jmo {\bf 50}, 2515 (2003).
+
+\bibitem{link-rsi06} A. Link \etal, ``Development of an {\em in situ} peak intensity measurement method for ultraintense single shot laser-plasma experiments at the Sandia
+Z petawatt facility,'' Rev. Sci. Inst. {\bf 77}, 10E723 (2006).
+
+\bibitem{ciappina-pra19} M. F. Ciappina, S. V. Popruzhenko, S. V. Bulanov, T. Ditmire, G. Korn, and S. Weber, ``Progress toward atomic diagnostics of ultrahigh laser intensities,'' \pra {\bf 99}, 043405 (2019).
+
+\bibitem{ciappina-lpl20} M.F. Ciappina and S.V. Popruzhenko, ``Diagnostics of ultra-intense laser pulses using tunneling ionization,'' Las. Phys. Lett. {\bf 17}, 025301 (2020).
+
+\bibitem{ciappina-mre20} M.F. Ciappina, E.E. Peganov and S.V. Popruzhenko, ``Focal-shape effects on the efficiency of the tunnel-ionization probe for extreme laser intensities,'' Matter Radiat. Extremes {\bf 5}, 044401 (2020).
+
+\bibitem{keldysh} L.V. Keldysh, ``Ionization in the field of a strong electromagnetic wave,''  \jetp \textbf{47} , 1945 (1964) [Sov. Phys. JETP \textbf{20} , 1307 (Engl. transl.) (1965)].
+
+\bibitem{dau2} Л.Д. Ландау, Е.М. Лифшиц, Теоретическая физика. Теория поля. Наука, 1988.
+
+\bibitem{ritus} V.I. Ritus
+
+\bibitem{cross-field-2} Другая статья про скрещенное поле -- найти!
+
+
+\vskip 1cm
+$$
+\vecA(t_1)
+$$
+$$
+\vecA(t_2)
+$$
+$$
+\vecP=\vecA(t_1)+\vecA(t_2)
+$$
+$$
+\vecP^{\prime}=\vecA(t_1)
+$$
+$$
+\vecP=2\vecA(t_2)
+$$
+$$
+{\rm Ar}^+
+$$
+$$
+{\rm Ar}^{2+}
+$$
+\vskip 1cm
+
+$$
+P, {\rm at.u.}
+$$
+
+$$
+\frac{dW}{dP}
+$$
+
+
